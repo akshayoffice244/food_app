@@ -181,6 +181,8 @@ class _HomeState extends State<Home> {
                   ),
                   margin: EdgeInsets.fromLTRB(20, 24, 20, 0),
                   child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    crossAxisAlignment: CrossAxisAlignment.end,
                     children: <Widget>[
                       Column(
                         children: <Widget>[
@@ -193,7 +195,39 @@ class _HomeState extends State<Home> {
                               fontWeight: FontWeight(500),
                             ),
                           ),
+
+                          Text(
+                            "\$12.99",
+                            style: TextStyle(
+                              color: Color(0xffA92F0E),
+                              fontSize: 24,
+                              fontFamily: "Liberation Sans",
+                              fontWeight: FontWeight(800),
+                            ),
+                          ),
                         ],
+                      ),
+
+                      ElevatedButton(
+                        onPressed: () {},
+                        style: ElevatedButton.styleFrom(
+                          padding: EdgeInsets.fromLTRB(32, 16, 32, 16),
+
+                          backgroundColor: Color(0xffA92F0E),
+                          shape: const RoundedRectangleBorder(
+                            borderRadius:
+                                BorderRadius.zero, // This removes the rounding
+                          ),
+                        ),
+                        child: Text(
+                          "Order Now",
+                          style: TextStyle(
+                            color: Color(0xffFFEFEC),
+                            fontSize: 16,
+                            fontFamily: "Liberation Sans",
+                            fontWeight: FontWeight(700),
+                          ),
+                        ),
                       ),
                     ],
                   ),
