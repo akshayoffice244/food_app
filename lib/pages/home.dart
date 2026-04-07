@@ -81,7 +81,6 @@ class _HomeState extends State<Home> {
                           style: TextStyle(
                             fontFamily: "PlusJakartaSans",
                             fontSize: 30,
-                            height: 40,
                             fontWeight: FontWeight(800),
                             color: Color(0xff4E2121),
                           ),
