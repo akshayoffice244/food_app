@@ -9,6 +9,7 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   Color appBarColor = Color(0x00fff4f3);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -57,7 +58,7 @@ class _HomeState extends State<Home> {
 
       body: Center(
         child: Container(
-          width: 342,
+          margin: EdgeInsets.fromLTRB(20, 20, 20, 20),
           child: Card(
             clipBehavior: Clip.hardEdge,
 
@@ -73,27 +74,129 @@ class _HomeState extends State<Home> {
 
                 Column(
                   children: <Widget>[
-                    Row(
-                      children:<Widget> [
-                        Text(
-                          "Spaghetti Carbonara",
+                    Container(
+                      margin: EdgeInsets.fromLTRB(0, 20, 0, 0),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Container(
+                            width: 300,
+                            margin: EdgeInsets.fromLTRB(20, 0, 0, 0),
+                            child: Text(
+                              "Spaghetti Carbonara",
 
-                          style: TextStyle(
-                            fontFamily: "PlusJakartaSans",
-                            fontSize: 30,
-                            fontWeight: FontWeight(800),
-                            color: Color(0xff4E2121),
+                              style: TextStyle(
+                                fontFamily: "PlusJakartaSans",
+                                fontSize: 30,
+                                fontWeight: FontWeight(800),
+                                color: Color(0xff4E2121),
+                              ),
+                            ),
                           ),
-                        ),
 
-                        IconButton(
-                          onPressed: () {},
-                          iconSize: 20,
-                          icon: Image.asset("assets/icon/heart_icon.png"),
+                          Expanded(
+                            child: Align(
+                              alignment: Alignment.topRight,
+                              child: IconButton(
+                                onPressed: () {},
+
+                                icon: Image.asset(
+                                  "assets/icons/hear_icon.png",
+                                  width: 20,
+                                  height: 20,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.fromLTRB(20, 20, 20, 0),
+                      child: Text(
+                        "Traditional Italian pasta dish made with fresh eggs, Pecorino Romano cheese, cured guanciale, and freshlycracked black pepper. A creamy masterpiece with no cream added.",
+                        style: TextStyle(
+                          color: Color(0xff834C4C),
+
+                          fontSize: 18,
+                          fontFamily: "LiberationSerif",
+                          fontWeight: FontWeight(300),
                         ),
-                      ],
+                      ),
                     ),
                   ],
+                ),
+
+                Container(
+                  margin: EdgeInsets.fromLTRB(20, 8, 0, 0),
+                  child: Row(
+                    children: [
+                      Chip(
+                        backgroundColor: Color(0XFFE197FC),
+
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.only(
+                            topRight: Radius.circular(20),
+                            bottomRight: Radius.circular(20),
+                            topLeft: Radius.circular(20),
+                            bottomLeft: Radius.circular(20),
+                          ),
+                        ),
+                        label: Text(
+                          "Chef's Choice".toUpperCase(),
+                          style: TextStyle(
+                            color: Color(0xff530B6F),
+                            fontFamily: "Liberation Sans",
+                            fontSize: 12,
+                          ),
+                        ),
+                      ),
+                      SizedBox(width: 8),
+                      Chip(
+                        backgroundColor: Color(0xffFFE1E0),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.only(
+                            topRight: Radius.circular(20),
+                            bottomRight: Radius.circular(20),
+                            topLeft: Radius.circular(20),
+                            bottomLeft: Radius.circular(20),
+                          ),
+                        ),
+                        label: Text(
+                          "Italian Heritage".toUpperCase(),
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: Color(0xff834C4C),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+
+                Container(
+                  padding: EdgeInsets.fromLTRB(0, 16, 0, 0),
+                  decoration: BoxDecoration(
+                    border: Border(top: BorderSide(width: 1)),
+                  ),
+                  margin: EdgeInsets.fromLTRB(20, 24, 20, 0),
+                  child: Row(
+                    children: <Widget>[
+                      Column(
+                        children: <Widget>[
+                          Text(
+                            "TOTAL PRICE",
+                            style: TextStyle(
+                              color: Color(0xff834C4C),
+                              fontSize: 12,
+                              fontFamily: "Liberation Sans",
+                              fontWeight: FontWeight(500),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
               ],
             ),
