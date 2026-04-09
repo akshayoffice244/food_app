@@ -51,12 +51,16 @@ class _ArtisanalSelectionsState extends State<ArtisanalSelections> {
       appBar: AppBar(
         surfaceTintColor: Colors.transparent,
         elevation: 12,
+        centerTitle: true,
         // bottomOpacity: 1,
         backgroundColor: Color.fromRGBO(255, 244, 243, 0.8),
         shadowColor: Color.fromRGBO(78, 33, 33, 0.06),
         title: Text(
-          "The Culinary Gallery",
+
+          "Culinary Gallery",
+          textAlign:TextAlign.center,
           style: TextStyle(
+
             fontFamily: "PlusJakartaSans",
             fontSize: 24.0,
             color: Color(0xffa92f0e),
@@ -129,10 +133,12 @@ class _ArtisanalSelectionsState extends State<ArtisanalSelections> {
                 shrinkWrap: true,
                 itemBuilder: (context, index) {
                   return Card(
+                    borderOnForeground: true,
                     elevation: 0,
                     color: Colors.white,
 
                     shape: RoundedRectangleBorder(
+                      side: BorderSide(color: Color.fromRGBO(223, 156, 154, 0.1),width: 1),
                       borderRadius: BorderRadiusGeometry.zero,
                     ),
                     child: Container(
@@ -206,7 +212,7 @@ class _ArtisanalSelectionsState extends State<ArtisanalSelections> {
           ],
         ),
       ),
-      bottomNavigationBar: Container(
+      /*bottomNavigationBar: Container(
         clipBehavior: Clip.hardEdge,
         decoration: BoxDecoration(
           boxShadow: [
@@ -255,7 +261,7 @@ class _ArtisanalSelectionsState extends State<ArtisanalSelections> {
             ),
           ],
         ),
-      ),
+      ),*/
     );
   }
 }

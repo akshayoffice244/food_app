@@ -1,0 +1,158 @@
+import 'package:flutter/material.dart';
+
+import 'artisanal_selections.dart';
+
+
+class ArtisanalPlates extends StatefulWidget {
+  const ArtisanalPlates({super.key});
+
+  @override
+  State<ArtisanalPlates> createState() => _ArtisanalPlatesState();
+}
+
+class _ArtisanalPlatesState extends State<ArtisanalPlates> {
+  List<Food> food_list = [
+    Food(
+      name: "Garden Bowl",
+      description: "Fresh greens & quinoa",
+      price: 14.5,
+      image: "garden_bowl.png",
+    ),
+    Food(
+      name: "Greek Lyric",
+      description: "Olives & feta cheese",
+      price: 12.0,
+      image: "greek_lyric.png",
+    ),
+
+    Food(
+      name: "Basil Pesto",
+      description: "Handmade linguine",
+      price: 18.90,
+      image: "basil_pesto.png",
+    ),
+
+    Food(
+      name: "Rustic Fig",
+      description: "Stone-fired crust",
+      price: 16.0,
+      image: "rustic_fig.png",
+    ),
+
+    Food(
+      name: "Pink Fillet",
+      description: "Wild caught salmon",
+      price: 22.50,
+      image: "rustic_fig.png",
+    ),
+
+    Food(
+      name: "Morning Hue",
+      description: "Poached farm egg",
+      price: 11.50,
+      image: "morning_hue.png",
+    ),
+  ];
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Color.fromRGBO(255, 244, 243, 1),
+      appBar: AppBar(
+        surfaceTintColor: Colors.transparent,
+
+        centerTitle: true,
+        // bottomOpacity: 1,
+        backgroundColor: Color.fromRGBO(255, 244, 243, 0.8),
+        shadowColor: Color.fromRGBO(78, 33, 33, 0.06),
+        title: Text(
+
+          "Culinary Gallery",
+          textAlign:TextAlign.center,
+          style: TextStyle(
+
+            fontFamily: "PlusJakartaSans",
+            fontSize: 24.0,
+            color: Color(0xff4E2121),
+            fontWeight: FontWeight(700),
+          ),
+        ),
+        leading: IconButton(
+          onPressed: () {
+            print("I was clicked");
+          },
+          icon: Image.asset("assets/icons/hamburger.png"),
+        ),
+        actions: [
+          Container(
+            margin: EdgeInsets.fromLTRB(0, 0, 20, 0), // Red border
+            
+            child:Image.asset("assets/icons/shop.png",
+              width: 16,
+              height: 20,
+            )
+           
+             
+          ),
+        ],
+      ),
+      body: Container(
+        color: Color.fromRGBO(255, 244, 243, 1),
+        margin: EdgeInsetsGeometry.fromLTRB(20, 0, 20, 0),
+        child: Column(
+          //crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            SizedBox(
+              width: 342,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Text(
+                    "Featured Selection".toUpperCase(),
+                    textAlign: TextAlign.left,
+                    style: TextStyle(
+                      fontFamily: "LiberationSerif",
+                      fontSize: 16,
+                      fontWeight: FontWeight(500),
+                      letterSpacing: 0.8,
+                      color: Color(0xffA92F0E),
+                    ),
+                  ),
+
+                  Text(
+                    "Artisanal Plates For Your Table",
+                    textAlign: TextAlign.left,
+                    style: TextStyle(
+                      fontFamily: "PlusJakartaSans",
+                      fontSize: 36,
+                      fontWeight: FontWeight(800),
+
+                      color: Color(0xff4E2121),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            GridView.builder(itemCount:food_list.length,gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2), itemBuilder: (context, index){
+
+
+              return Card(
+                child: Container(
+                  width: 163,
+                  child: Column(
+                    children: [
+
+                    ],
+                  ),
+                )
+                ,
+              );
+            })
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+
+
