@@ -86,8 +86,13 @@ flutter:
      - family: Liberation Sans
        fonts:
          - asset: assets/fonts/LiberationSans-Regular.ttf
+
+     - family: Be Vietnam Pro
+       fonts:
+         - asset: assets/fonts/BeVietnamPro-Regular.ttf
 #         - asset: fonts/TrajanPro_Bold.ttf
 #           weight: 700
   #LiberationSans-Regular.ttf
+
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package

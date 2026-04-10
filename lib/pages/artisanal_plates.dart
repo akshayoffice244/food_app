@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import 'artisanal_selections.dart';
 
-
 class ArtisanalPlates extends StatefulWidget {
   const ArtisanalPlates({super.key});
 
@@ -16,7 +15,7 @@ class _ArtisanalPlatesState extends State<ArtisanalPlates> {
       name: "Garden Bowl",
       description: "Fresh greens & quinoa",
       price: 14.5,
-      image: "garden_bowl.png",
+      image: "green_bowl.png",
     ),
     Food(
       name: "Greek Lyric",
@@ -53,6 +52,7 @@ class _ArtisanalPlatesState extends State<ArtisanalPlates> {
       image: "morning_hue.png",
     ),
   ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -65,11 +65,9 @@ class _ArtisanalPlatesState extends State<ArtisanalPlates> {
         backgroundColor: Color.fromRGBO(255, 244, 243, 0.8),
         shadowColor: Color.fromRGBO(78, 33, 33, 0.06),
         title: Text(
-
           "Culinary Gallery",
-          textAlign:TextAlign.center,
+          textAlign: TextAlign.center,
           style: TextStyle(
-
             fontFamily: "PlusJakartaSans",
             fontSize: 24.0,
             color: Color(0xff4E2121),
@@ -85,13 +83,8 @@ class _ArtisanalPlatesState extends State<ArtisanalPlates> {
         actions: [
           Container(
             margin: EdgeInsets.fromLTRB(0, 0, 20, 0), // Red border
-            
-            child:Image.asset("assets/icons/shop.png",
-              width: 16,
-              height: 20,
-            )
-           
-             
+
+            child: Image.asset("assets/icons/shop.png", width: 16, height: 20),
           ),
         ],
       ),
@@ -132,27 +125,124 @@ class _ArtisanalPlatesState extends State<ArtisanalPlates> {
                 ],
               ),
             ),
-            GridView.builder(itemCount:food_list.length,gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2), itemBuilder: (context, index){
+            Expanded(
+              child: GridView.builder(
+                itemCount: food_list.length,
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  mainAxisExtent: 285.5,
+                  mainAxisSpacing: 16,
+                  crossAxisSpacing: 16,
+                ),
+                itemBuilder: (context, index) {
+                  return Card(
+                    color: Colors.white,
+                    elevation: 0,
+
+                    shape: RoundedSuperellipseBorder(
+                      borderRadius: BorderRadius.circular(36),
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Container(
+                          margin: EdgeInsets.fromLTRB(0, 12, 0, 0),
+                          child: Image.asset(
+                            "assets/images/${food_list[index].image}",
+                            width: 139,
+                            height: 155,
+                          ),
+                        ),
+
+                       Container(
+                         margin: EdgeInsets.fromLTRB(12, 0, 0, 0),
+                         child: Row(
+                           mainAxisAlignment: MainAxisAlignment.start,
+                           children: [
+                             Expanded(
+
+                               child: Column(
+
+                                 children: [
+                                   Row(
+                                     children: [
+                                       Text(
+                                         food_list[index].name!,
 
 
-              return Card(
-                child: Container(
-                  width: 163,
-                  child: Column(
-                    children: [
+                                         style: TextStyle(
+                                           color: Color(0xff4E2121),
+                                           fontSize: 18,
+                                           fontWeight: FontWeight(700),
+                                           fontFamily: "PlusJakartaSans",
+                                         ),
+                                       ),
+                                     ],
+                                   ),
 
-                    ],
-                  ),
-                )
-                ,
-              );
-            })
+
+
+                                   Row(
+                                     children: [
+                                       Text(
+                                         food_list[index].description!,
+                                         textAlign: TextAlign.left,
+                                         style: TextStyle(
+                                           color: Color(0xff4E2121),
+                                           fontSize: 14,
+                                           fontWeight: FontWeight(400),
+                                           fontFamily: "Be Vietnam Pro",
+                                         ),
+                                       ),
+                                     ],
+                                   ),
+                                 ],
+                               ),
+                             ),
+                           ],
+                         ),
+                       ),
+
+
+                        Container(
+                          margin: EdgeInsets.fromLTRB(12, 0, 12, 0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Chip(
+
+                                label: Text("\$${food_list[index].price}"),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(9999),
+                                ),
+                                side: BorderSide.none,
+                                backgroundColor: Color(0xffFFC3C1),
+                                labelStyle: TextStyle(
+                                  fontFamily: "Be Vietnam Pro",
+                                  fontSize: 14,
+                                  fontWeight: FontWeight(600),
+                                  color: Color(0xff85232A),
+                                ),
+                              ),
+                              IconButton(
+                                onPressed: () {},
+                                icon: Image.asset(
+                                  "assets/icons/add.png",
+                                  width: 17,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  );
+                },
+              ),
+            ),
           ],
         ),
       ),
     );
   }
 }
-
-
-

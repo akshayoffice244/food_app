@@ -5,7 +5,7 @@ import 'package:food_card/pages/home.dart';
 
 void main() {
   runApp(MaterialApp(
-    home:ArtisanalSelections(),
+    home:ArtisanalPlates(),
   ));
 }
 
